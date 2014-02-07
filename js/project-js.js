@@ -1,7 +1,5 @@
-
-
 (function ($) {
-	/* =Change Tab */
+    /* =Change Tab */
     $.fn.setTabLoadContent = function (obj) {
         if ($(this).length === 1 && $(this).data('seted') === undefined) {
             // set read
@@ -54,42 +52,43 @@
         }
     };
 
-	/* =Check Box */
-	$.fn.customCheckBox = function(){
-		if ($(this).length === 1 && $(this).data('customCheckBox') === undefined) {
+    /* =Check Box */
+    $.fn.customCheckBox = function () {
+        if ($(this).length === 1 && $(this).data('customCheckBox') === undefined) {
             // set read
             $(this).data('customCheckBox', true);
-				
-			$(this).bind('click',function(){
-				$(this).toggleClass('active');
-			});
 
-		} else if ($(this).length > 1) {
+            $(this).bind('click', function () {
+                $(this).toggleClass('active');
+            });
+
+        } else if ($(this).length > 1) {
             $(this).each(function (index, element) {
                 $(element).customCheckBox(obj);
             });
         }
-	}
-	
-	/* =Radio Box */
-	$.fn.customRadioBox = function(obj){
+    }
+
+    /* =Radio Box */
+    /*$.fn.customRadioBox = function(obj){
 		if ($(this).length === 1 && $(this).data('customRadioBox') === undefined) {
             // set read
             $(this).data('customRadioBox', true);
 
-			var $itemClick/*, $allInput*/;
-				$itemClick = $(this).find('.js-item-radio'),
-				/*$allInput = $(this).find('input')*/;
+			var itemClick;
+			//var $allInput;
+				itemClick = $(this).find('.js-item-radio');
+			//var	$allInput = $(this).find('input')
 
 				
-			$itemClick.bind('click',function(e){
+			itemClick.bind('click',function(e){
 				e.preventDefault();
 				
-				/*$allInput.attr('checked', false);*/
-				$itemClick.removeClass('active');
+				//$allInput.attr('checked', false);
+				itemClick.removeClass('active');
 
 				$(this).addClass('active');
-				/*$(this).find('input').attr('checked', true);*/
+				//$(this).find('input').attr('checked', true);
 
 			});
 
@@ -98,7 +97,7 @@
                 $(element).customRadioBox(obj);
             });
         }
-	};
+	};*/
 
 })(jQuery);
 

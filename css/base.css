@@ -42,7 +42,7 @@ ul,var,video {
 body {
     color: #333;
     font: normal 14px/1.2 Tahoma, Arial, san-serif;
-	padding-bottom: 65px; }
+	/*padding-bottom: 65px;*/ }
 
 html, body {height: 100%; }
 
@@ -207,3 +207,84 @@ table {
 
 th {font-weight: bold; }
 td {vertical-align: top; }
+
+
+
+
+
+
+/*------------------------------------------------------------------------*\
+=Begin
+\*------------------------------------------------------------------------*/
+#wrpCanvas {
+	width: 700px;
+	height: 300px;
+	background: #ccc; 
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-webkit-animation: ; }
+
+.balloon {
+	position: absolute; 
+	top: 69px; 
+	left: 50%; 
+	-webkit-transform: translate(-50%,0%);
+	-webkit-animation-name: ballon-up-down;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-iteration-count: infinite; 
+	-webkit-animation-direction: alternate; 
+	-webkit-animation-fill-mode: none;
+	-webkit-animation-play-state: running; }
+
+.balloon img {
+	position: absolute;
+	-webkit-transform: translate(-50%,0%);
+
+	-webkit-animation-name: balloon-begin,ballon-dug-dig,ballon-speed-up;
+	-webkit-animation-duration: 0.5s,1s,5s;
+	-webkit-animation-timing-function: linear,linear;
+	-webkit-animation-delay: 0,0.5s,2s;
+	-webkit-animation-iteration-count: 1,infinite; 
+	-webkit-animation-direction: alternate; 
+	-webkit-animation-fill-mode: none,none,forwards;
+	-webkit-animation-play-state: running,running; }
+
+
+@-webkit-keyframes balloon-begin {
+	0% {
+		top: -350px;
+		width: 330px; 
+		height: 440px; 
+		-webkit-filter: blur(10px); }
+	
+	100% {
+		top: 0; 
+		width: 166px; 
+		height: 220px; 
+		-webkit-filter: blur(0); }
+}
+
+@-webkit-keyframes ballon-up-down {
+	0% {top: 69px; }
+	100% {top: 40px; }
+}
+
+@-webkit-keyframes ballon-dug-dig {
+	0% {width: 166px; height: 220px; }
+	50% {width: 166px; height: 220px; }
+	75% {width: 173px; height: 230px; }
+	100% {width: 166px; height: 220px; }
+}
+
+@-webkit-keyframes ballon-speed-up {
+	0% {-webkit-filter: blur(0); top: 0; }
+	30% {-webkit-filter: blur(0); }
+	50% {-webkit-filter: blur(5px); }
+	75% {top: 0; }
+	95% {-webkit-filter: blur(5px); top: -300px; }
+	100% {-webkit-filter: blur(0); top: 0; }
+}
